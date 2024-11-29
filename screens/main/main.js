@@ -1,12 +1,9 @@
-// main.js
 document.addEventListener('DOMContentLoaded', () => {
     const options = document.querySelectorAll('.menu-option');
     let selectedIndex = 0;
 
-    // Set initial selection
     updateSelection();
 
-    // Mouse hover handlers
     options.forEach((option, index) => {
         option.addEventListener('mouseover', () => {
             selectedIndex = index;
@@ -18,15 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         switch(e.key) {
             case 'ArrowUp':
-                e.preventDefault(); // Prevent page scroll
+                e.preventDefault();
                 selectedIndex = Math.max(0, selectedIndex - 1);
                 break;
             case 'ArrowDown':
-                e.preventDefault(); // Prevent page scroll
+                e.preventDefault();
                 selectedIndex = Math.min(options.length - 1, selectedIndex + 1);
                 break;
             case 'Enter':
@@ -49,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         options.forEach((option, index) => {
             option.classList.toggle('selected', index === selectedIndex);
         });
-        // Toggle modern and crt classes based on selection
         if (options[selectedIndex].dataset.option === 'modern') {
             document.body.classList.add('modern');
             document.body.classList.remove('crt');
@@ -61,9 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleSelection(option) {
         console.log(`Selected: ${option}`);
-        // Transition to the desktop page
         setTimeout(() => {
             window.location.href = `../desktop/index.html?theme=${option}`;
-        }, 500); // Add a delay for visual effect if needed
+        }, 500);
     }
 });
