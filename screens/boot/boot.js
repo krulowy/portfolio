@@ -44,7 +44,7 @@ const bootMessages = [
         let currentText = bootText.textContent;
         for (let i = 0; i <= text.length; i++) {
             bootText.textContent = currentText + text.slice(0, i) + (i < text.length ? '█' : '');
-            await sleep(1); // Adjust delay for desired speed
+            await sleep(1);
         }
         bootText.textContent += '\n';
     }
@@ -53,7 +53,7 @@ const bootMessages = [
         bootText.textContent = currentText + 'RAM Test: ';
         for (let i = 0; i <= 25200; i += 100) {
             bootText.textContent = currentText + 'RAM Test: ' + i + 'K█';
-            await sleep(1); // Adjust delay for desired speed
+            await sleep(1);
         }
         bootText.textContent = currentText + 'RAM Test: 25200K Passed\n';
     }
@@ -87,18 +87,16 @@ const bootMessages = [
         });
     }
     async function bootSequence() {
-        // Type out each message
-        document.body.classList.add('boot-active'); // Add at start of bootSequence()
+        document.body.classList.add('boot-active');
         for (const message of bootMessages) {
             if (message.startsWith('RAM Test:')) {
                 await typeMemoryTest();
             } else {
                 await typeText(message);
             }
-            await sleep(100); // Reduced delay between messages
+            await sleep(100);
         }
         await promptFullscreen();
-    // Transition to loading screen
     window.location.href = '../loading/index.html';
     }
     bootSequence();
