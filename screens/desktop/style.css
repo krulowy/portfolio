@@ -166,9 +166,6 @@
     animation: textShadow 1.6s infinite;
   }
 
-/* Desktop Styles */    
-
-
 ::target-text {
     cursor: url('../../assets/cursors/text.cur') 12 12, auto;
 }
@@ -194,7 +191,6 @@ body{
     overflow: hidden;
 }
 
-/* Desktop Icons */
 .desktop-icons {
     padding: 20px;
     display: grid;
@@ -231,7 +227,6 @@ button:hover {
     margin-bottom: 5px;
 }
 
-/* Windows */
 .window {
     position: absolute;
     min-width: 300px;
@@ -265,7 +260,6 @@ button:hover {
     color: #fff;
 }
 
-/* Taskbar */
 .taskbar {
     position: fixed;
     bottom: 0;
@@ -372,9 +366,9 @@ button {
 
 .start-menu .background-toggle img {
     color: #fff;
-    width: 200px; /* Adjust size as needed */
-    height: 200px; /* Adjust size as needed */
-    border: 2px solid #ea00ff80; /* Same purple as the taskbar border */
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ea00ff80;
     border-radius: 5px;
 }
 
@@ -394,11 +388,11 @@ body.modern .desktop {
 }
 
 body.modern .desktop-icon:hover {
-    cursor: pointer; /* Use the default cursor */
+    cursor: pointer;
 }
 
 body.modern button:hover {
-    cursor: pointer; /* Use the default cursor */
+    cursor: pointer;
 }
 
 body.modern .window {
@@ -429,21 +423,19 @@ body.modern .window-content {
 }
 
 body.modern .start-menu .theme-toggle:hover {
-    cursor: pointer; /* Use the default cursor */
+    cursor: pointer;
 }
 
 body.modern .volume-slider:hover {
-    cursor: pointer; /* Use the default cursor */
+    cursor: pointer;
 }
 
-/* Terminal specific styles */
 .terminal-content {
     font-family: monospace;
     white-space: pre;
     padding: 10px;
 }
 
-/* Animation for windows */
 .window.active {
     display: block;
     animation: windowOpen 0.3s ease-out;
