@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Environment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+    <div class="desktop">
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-window="documents">
+                <div class="icon-box">📄</div>
+                <span>Documents</span>
+            </div>
+            <div class="desktop-icon" data-window="pictures">
+                <div class="icon-box">🖼️</div>
+                <span>Pictures</span>
+            </div>
+            <div class="desktop-icon" data-window="terminal">
+                <div class="icon-box">💻</div>
+                <span>Terminal</span>
+            </div>
+        </div>
+
+        <!-- Windows -->
+        <div class="windows">
+            <div class="window" id="documents-window">
+                <div class="window-header">
+                    <span>Documents</span>
+                    <button class="close-btn">×</button>
+                </div>
+                <div class="window-content">
+                    <p>Documents folder content goes here...</p>
+                </div>
+            </div>
+
+            <div class="window" id="pictures-window">
+                <div class="window-header">
+                    <span>Pictures</span>
+                    <button class="close-btn">×</button>
+                </div>
+                <div class="window-content">
+                    <p>Pictures folder content goes here...</p>
+                </div>
+            </div>
+
+            <div class="window" id="terminal-window">
+                <div class="window-header">
+                    <span>Terminal</span>
+                    <button class="close-btn">×</button>
+                </div>
+                <div class="window-content">
+                    <div class="terminal-content">
+                        <p>Welcome to Terminal</p>
+                        <p>C:\> _</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="start-menu">
+                <button class="theme-toggle">Switch Theme</button>
+                
+            </div>
+            <div class="taskbar-items">
+                <!-- Active windows will be shown here -->
+            </div>
+            <div class="system-tray">
+                <div class="volume-control">
+                    <input type="range" min="0" max="100" value="50" class="volume-slider">
+                </div>
+                <div class="datetime"></div>
+            </div>
+        </div>
+    </div>
+    <div class="scan-lines"></div>
+    <div class="vhs-overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>
