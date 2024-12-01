@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize date/time display
     function getQueryParams() {
         const params = {};
         window.location.search.substring(1).split('&').forEach(param => {
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return params;
     }
 
-    // Apply theme based on URL parameter
     const params = getQueryParams();
     if (params.theme === 'modern') {
         document.body.classList.add('modern');
@@ -27,25 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateDateTime, 1000);
     updateDateTime();
 
-    // Theme toggle
     const themeToggle = document.querySelector('.theme-toggle');
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('modern');
         document.body.classList.toggle('crt');
     });
 
-    // Window management
     let activeWindow = null;
     let initialX, initialY, initialMouseX, initialMouseY;
-
-    // Desktop icons click handler
+    
     document.querySelectorAll('.desktop-icon').forEach(icon => {
         icon.addEventListener('click', () => {
             const windowId = `${icon.dataset.window}-window`;
             const window = document.getElementById(windowId);
             
             if (!window.classList.contains('active')) {
-                // Position window randomly within viewport
+                
                 const maxX = document.documentElement.clientWidth - 400;
                 const maxY = document.documentElement.clientHeight - 300;
                 const randomX = Math.random() * maxX;
@@ -55,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.style.top = `${randomY}px`;
                 window.classList.add('active');
                 
-                // Add to taskbar
                 updateTaskbar();
             }
             
@@ -63,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close buttons
     document.querySelectorAll('.close-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const window = e.target.closest('.window');
@@ -72,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Window dragging
     document.querySelectorAll('.window-header').forEach(header => {
         header.addEventListener('mousedown', startDragging);
     });
@@ -113,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.style.zIndex = '2';
     }
 
-    // Taskbar management
     function updateTaskbar() {
         const taskbarItems = document.querySelector('.taskbar-items');
         taskbarItems.innerHTML = '';
@@ -130,10 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Volume control
     const volumeSlider = document.querySelector('.volume-slider');
-    volumeSlider.addEventListener('input', (e) => {
-        // Here you could implement actual volume control
+        volumeSlider.addEventListener('input', (e) => {
+
         console.log(`Volume set to: ${e.target.value}`);
     });
 });

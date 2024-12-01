@@ -19,8 +19,7 @@ function simulateLoading() {
 
 document.addEventListener('DOMContentLoaded', () => {
     simulateLoading();
-
-    // Toggle modern class on glitch animation iteration
+    
     const glitchOverlay = document.querySelector('.glitch-overlay');
     const scanLines = document.querySelector('.scan-lines');
     glitchOverlay.addEventListener('animationiteration', () => {
