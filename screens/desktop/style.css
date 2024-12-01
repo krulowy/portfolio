@@ -188,8 +188,8 @@ body{
 }
 .desktop {
     height: 100vh;
-    background-image: url('../../assets/backgrounds/2427560.jpg');
-    background-size: cover;
+    background-image: url('../../assets/backgrounds/2735172.jpg');
+    background-size: contain;
     position: relative;
     overflow: hidden;
 }
@@ -353,6 +353,7 @@ button {
     transition: all 0.3s ease;
     position: relative;
     font-family: 'MorePerfectDOSVGA', monospace;
+    text-transform: uppercase;
 }
 
 .start-menu .theme-toggle:hover {
